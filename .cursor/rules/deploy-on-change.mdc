@@ -1,0 +1,27 @@
+---
+description: サイト変更後は必ず GitHub に push して Vercel に反映する
+alwaysApply: true
+---
+
+# デプロイ運用
+
+本番 URL: https://tsp-homepage.vercel.app（Vercel は `main` ブランチと連携）
+
+## 変更後の必須作業
+
+`config/siteData.ts`、`app/`、`public/` などサイトに関わるファイルを編集したら、**同じターン内で** 次を実行する:
+
+1. `git add`（関連ファイルのみ。`.env` など秘密情報は含めない）
+2. 内容が分かるコミットメッセージで `git commit`
+3. `git push origin main`
+
+ユーザーが明示的に「コミットしないで」と言った場合のみ省略する。
+
+## 編集の中心
+
+- 文言・画像パス: `config/siteData.ts`
+- 画像ファイル: `public/images/`
+
+## Windows の npm
+
+PowerShell で `npm` が失敗する場合は `npm.cmd` を使う。

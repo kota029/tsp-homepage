@@ -50,8 +50,8 @@ export const siteData = {
 
   /** ヒーロー（トップ） */
   hero: {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1800&q=80",
+    /** public/images/ に置いた画像（例: /images/hero-background.png） */
+    backgroundImage: "/images/hero-background.png",
     tag: "Student Social Project",
     headline: {
       line1: "出会いが、",

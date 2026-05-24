@@ -168,7 +168,8 @@ function Hero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${hero.backgroundImage}')` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-orange-50/50 to-orange-50/95" />
+      {/* 写真のデザインが見えるよう、オーバーレイは薄め */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/35" />
 
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
