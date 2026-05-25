@@ -98,9 +98,9 @@ export const siteData = {
       {
         id: 1,
         tag: "地域連携",
-        title: "沖縄タコス屋台プロジェクト",
+        title: "TSP子ども食堂プロジェクト",
         desc: "地元食材を使ったタコスで、廃校になった集落の広場を週末マーケットとして復活させた試み。地域の高齢者と学生が共同で運営する。",
-        img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80",
+        img: "/images/project-1-kids-cafeteria.png",
         size: "large",
       },
       {
