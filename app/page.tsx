@@ -153,6 +153,12 @@ function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
   const { hero } = siteData;
+  const hasHeadline = Boolean(
+    hero.headline.line1 ||
+      hero.headline.line2Prefix ||
+      hero.headline.highlight ||
+      hero.headline.suffix
+  );
 
   useLayoutEffect(() => {
     setLoaded(true);
@@ -187,20 +193,22 @@ function Hero() {
           {hero.tag}
         </p>
 
-        <h1
-          className={`${revealHidden(loaded, "opacity-0 translate-y-6", "opacity-100 translate-y-0")} text-gray-900 font-black leading-[1.05] mb-8`}
-          style={{
-            fontFamily: "'Noto Serif JP', serif",
-            fontSize: "clamp(2rem, 7vw, 6rem)",
-            transitionDelay: "0.25s",
-          }}
-        >
-          {hero.headline.line1}
-          <br />
-          {hero.headline.line2Prefix}
-          <span className="text-orange-500">{hero.headline.highlight}</span>
-          {hero.headline.suffix}
-        </h1>
+        {hasHeadline && (
+          <h1
+            className={`${revealHidden(loaded, "opacity-0 translate-y-6", "opacity-100 translate-y-0")} text-gray-900 font-black leading-[1.05] mb-8`}
+            style={{
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: "clamp(2rem, 7vw, 6rem)",
+              transitionDelay: "0.25s",
+            }}
+          >
+            {hero.headline.line1}
+            <br />
+            {hero.headline.line2Prefix}
+            <span className="text-orange-500">{hero.headline.highlight}</span>
+            {hero.headline.suffix}
+          </h1>
+        )}
 
         <p
           className={`${revealHidden(loaded, "opacity-0 translate-y-6", "opacity-100 translate-y-0")} text-gray-700 text-base md:text-xl max-w-xl leading-relaxed mb-12 whitespace-pre-line`}
