@@ -116,7 +116,7 @@ export const siteData = {
         tag: "教育",
         title: "Coming Soon",
         desc: "子どもたちの未来を育む、新たな教育プロジェクトが始動します！",
-        img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+        img: "/images/project-3-coming-soon.png",
         size: "small",
       },
       {
