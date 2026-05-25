@@ -108,7 +108,7 @@ export const siteData = {
         tag: "タコス販売",
         title: "キッチンカープロジェクト",
         desc: "食をきっかけに地域の孤立を減らし、支え合いの輪を広げるキッチンカーです。あなたの街へ、温もりと賑わいの場をデリバリーします。",
-        img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+        img: "/images/project-2-kitchen-car.png",
         size: "small",
       },
       {
