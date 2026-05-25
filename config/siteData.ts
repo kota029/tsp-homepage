@@ -124,7 +124,7 @@ export const siteData = {
         tag: "まちづくり",
         title: "Coming Soon",
         desc: "活動はさらに街の中へ！地域全体を元気にする新企画が始動します。",
-        img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+        img: "/images/project-4-coming-soon.png",
         size: "large",
       },
     ] satisfies Project[],
