@@ -54,10 +54,10 @@ export const siteData = {
     backgroundImage: "/images/hero-background.png",
     tag: "Student Social Project",
     headline: {
-      line1: "出会いが、",
-      line2Prefix: "社会を",
-      highlight: "動かす",
-      suffix: "。",
+      line1: "",
+      line2Prefix: "",
+      highlight: "",
+      suffix: "",
     },
     description:
       "TSPは食を通じて地域課題に向き合う学生団体です。\n一枚のタコスが、地域・社会・未来をつなぐ。",
