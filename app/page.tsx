@@ -170,11 +170,6 @@ function Hero() {
       />
       {/* 写真のデザインが見えるよう、オーバーレイは薄め */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/35" />
-      {/* 背景画像に焼き込まれたコピーをやわらかく隠す */}
-      <div
-        aria-hidden="true"
-        className="absolute right-[4%] bottom-[24%] h-14 w-[42%] min-w-[180px] max-w-[360px] rounded-full bg-white/50 backdrop-blur-md md:right-[5%] md:bottom-[23%] md:h-20 md:w-[32%] md:max-w-[420px]"
-      />
 
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
