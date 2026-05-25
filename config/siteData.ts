@@ -15,6 +15,7 @@ export type Project = {
   desc: string;
   /** 画像URL（例: https://... または /images/photo.jpg） */
   img: string;
+  href?: string;
   size: "large" | "small";
 };
 
@@ -101,6 +102,7 @@ export const siteData = {
         title: "TSP子ども食堂プロジェクト",
         desc: "子どもも大人も、誰でも気軽に集まれる多世代交流の食堂です。食を囲みながら、みんなが笑顔で繋がれる居場所を育てます。",
         img: "/images/project-1-kids-cafeteria.png",
+        href: "/projects/kodomo-shokudo",
         size: "large",
       },
       {

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { siteData, type Project } from "@/config/siteData";
 
@@ -377,6 +378,13 @@ function ProjectCard({
         style={{ backgroundImage: `url('${p.img}')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/85 via-gray-900/25 to-transparent group-hover:from-orange-900/80 group-hover:via-orange-800/30 transition-all duration-500" />
+      {p.href ? (
+        <Link
+          href={p.href}
+          aria-label={`${p.title}の詳細を見る`}
+          className="absolute inset-0 z-20 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-50"
+        />
+      ) : null}
 
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
         <span className="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3 text-white bg-gradient-to-r from-orange-500 to-amber-500">
