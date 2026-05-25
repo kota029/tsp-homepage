@@ -81,7 +81,7 @@ export const siteData = {
     body:
       "TSPは、子ども食堂やキッチンカーを通じた食の活動により、\n多世代が自然に集う交流の場を創出します。\n地域内の孤立を防ぎ、住民同士が温かく支え合い、\n新たな挑戦が循環する持続可能なコミュニティを目指します。",
     image:
-      "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=900&q=80",
+      "/images/vision-image.png",
     imageCaption:
       "農家・学生・地域住民が一体となって作るタコスマーケット（長野県・2024年秋）",
   },
