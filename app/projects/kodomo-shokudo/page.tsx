@@ -217,7 +217,7 @@ export default function KodomoShokudoPage() {
             参加もボランティアも、あなたの一歩が地域の子どもたちの笑顔になります。
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
+            <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfIXJH1vRTMVPJCR3Uf8rTwVdlOKy67_svBWsG6KXMAryQfxg/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
@@ -226,7 +226,7 @@ export default function KodomoShokudoPage() {
               <span>❤️</span>
               参加を申し込む
               <span>↗</span>
-            </Link>
+            </a>
 
             <Link
               href="#"
