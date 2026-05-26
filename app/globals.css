@@ -3,7 +3,8 @@
 /* 常にライトテーマ（ダークモードで文字が消えるのを防ぐ） */
 html {
   color-scheme: light;
-  scroll-behavior: smooth;
+  /* 外部ページから戻るときのスクロール復元を安定させる */
+  scroll-behavior: auto;
 }
 
 body {

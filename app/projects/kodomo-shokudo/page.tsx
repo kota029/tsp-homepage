@@ -1,7 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+
+const SIGNUP_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfIXJH1vRTMVPJCR3Uf8rTwVdlOKy67_svBWsG6KXMAryQfxg/viewform?usp=header";
+const SCROLL_STORAGE_KEY = "kodomo-shokudo-scroll-y";
 
 const faqs = [
   {
@@ -117,6 +121,82 @@ function PlaceholderButton({
 }
 
 export default function KodomoShokudoPage() {
+  const saveScrollPosition = useCallback(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.sessionStorage.setItem(SCROLL_STORAGE_KEY, String(window.scrollY));
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const restoreScrollPosition = () => {
+      const saved = window.sessionStorage.getItem(SCROLL_STORAGE_KEY);
+
+      if (!saved) {
+        return;
+      }
+
+      const top = Number(saved);
+
+      if (!Number.isFinite(top)) {
+        return;
+      }
+
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top, behavior: "auto" });
+      });
+    };
+
+    const blurActiveElement = () => {
+      const activeElement = document.activeElement;
+
+      if (activeElement instanceof HTMLElement) {
+        activeElement.blur();
+      }
+    };
+
+    const handlePageShow = () => {
+      blurActiveElement();
+      restoreScrollPosition();
+    };
+
+    const handlePageHide = () => {
+      saveScrollPosition();
+    };
+
+    window.addEventListener("pageshow", handlePageShow);
+    window.addEventListener("pagehide", handlePageHide);
+
+    return () => {
+      window.removeEventListener("pageshow", handlePageShow);
+      window.removeEventListener("pagehide", handlePageHide);
+    };
+  }, [saveScrollPosition]);
+
+  const openSignupForm = useCallback(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    saveScrollPosition();
+
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement) {
+      activeElement.blur();
+    }
+
+    const popup = window.open(SIGNUP_FORM_URL, "_blank", "noopener,noreferrer");
+
+    if (!popup) {
+      window.location.assign(SIGNUP_FORM_URL);
+    }
+  }, [saveScrollPosition]);
+
   return (
     <main className="min-h-screen bg-[#FFFBF5] font-sans text-stone-800">
       <section className="relative flex min-h-[560px] h-[92vh] items-end overflow-hidden pb-16 sm:pb-24">
@@ -235,16 +315,15 @@ export default function KodomoShokudoPage() {
             参加もボランティアも、あなたの一歩が地域の子どもたちの笑顔になります。
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfIXJH1vRTMVPJCR3Uf8rTwVdlOKy67_svBWsG6KXMAryQfxg/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white px-8 py-4 text-base font-black text-orange-600 shadow-lg shadow-orange-700/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-50 active:translate-y-0 sm:text-lg"
+            <button
+              type="button"
+              onClick={openSignupForm}
+              className="inline-flex touch-manipulation items-center justify-center gap-2.5 rounded-2xl bg-white px-8 py-4 text-base font-black text-orange-600 shadow-lg shadow-orange-700/30 transition-all duration-200 active:translate-y-0 sm:text-lg"
             >
               <span>❤️</span>
               参加を申し込む
               <span>↗</span>
-            </a>
+            </button>
 
             <PlaceholderButton
               className="inline-flex items-center justify-center gap-2.5 rounded-2xl border-2 border-white/40 bg-white/15 px-8 py-4 text-base font-black text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/25 active:translate-y-0 sm:text-lg"
