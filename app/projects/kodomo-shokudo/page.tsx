@@ -201,7 +201,7 @@ export default function KodomoShokudoPage() {
     <main className="min-h-screen bg-[#FFFBF5] font-sans text-stone-800">
       <section className="relative flex min-h-[560px] h-[92vh] items-end overflow-hidden pb-16 sm:pb-24">
         <Image
-          src="/images/hero-background.png"
+          src="/images/kodomo-shokudo-hero-logo.png"
           alt="子ども食堂の活動の様子"
           fill
           priority
