@@ -111,6 +111,7 @@ export const siteData = {
         title: "キッチンカープロジェクト",
         desc: "食をきっかけに地域の孤立を減らし、支え合いの輪を広げるキッチンカーです。あなたの街へ、温もりと賑わいの場をデリバリーします。",
         img: "/images/project-2-kitchen-car.png",
+        href: "/projects/food-truck",
         size: "small",
       },
       {
