@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const faqs = [
@@ -95,6 +94,25 @@ function InfoCard({
         {sub ? <p className="mt-0.5 text-sm text-stone-500">{sub}</p> : null}
       </div>
     </div>
+  );
+}
+
+function PlaceholderButton({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) {
+  return (
+    <button
+      type="button"
+      aria-disabled="true"
+      title="リンク準備中"
+      className={className}
+    >
+      {children}
+    </button>
   );
 }
 
@@ -228,16 +246,13 @@ export default function KodomoShokudoPage() {
               <span>↗</span>
             </a>
 
-            <Link
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            <PlaceholderButton
               className="inline-flex items-center justify-center gap-2.5 rounded-2xl border-2 border-white/40 bg-white/15 px-8 py-4 text-base font-black text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/25 active:translate-y-0 sm:text-lg"
             >
               <span>🤝</span>
               ボランティアに参加
               <span>↗</span>
-            </Link>
+            </PlaceholderButton>
           </div>
         </div>
       </section>
@@ -256,16 +271,13 @@ export default function KodomoShokudoPage() {
             </div>
           </div>
 
-          <Link
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
+          <PlaceholderButton
             className="inline-flex items-center gap-2 rounded-full border border-stone-200 px-5 py-2.5 text-sm font-bold text-stone-600 transition-colors hover:border-orange-400 hover:text-orange-500"
           >
             <span className="mr-1">📸</span>
             公式Instagramを見る
             <span>↗</span>
-          </Link>
+          </PlaceholderButton>
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
@@ -320,13 +332,12 @@ export default function KodomoShokudoPage() {
                 「畑で余った野菜がある」「お米を提供したい」という方はぜひご連絡ください。小さなご支援が、子どもたちの笑顔につながります。
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="#"
+                <PlaceholderButton
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-orange-600"
                 >
                   <span>❓</span>
                   寄付・支援のご相談はこちら
-                </Link>
+                </PlaceholderButton>
                 <a
                   href="mailto:shokudo@example.com"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-stone-200 px-6 py-3 text-sm font-bold text-stone-600 transition-colors hover:border-orange-400 hover:text-orange-500"
@@ -364,13 +375,12 @@ export default function KodomoShokudoPage() {
           <p className="mb-5 text-sm text-stone-500">
             公式Instagram の DM またはお問い合わせフォームからお気軽にどうぞ。
           </p>
-          <Link
-            href="#"
+          <PlaceholderButton
             className="inline-flex items-center gap-2 rounded-full border border-orange-300 px-6 py-2.5 text-sm font-bold text-orange-500 transition-colors hover:bg-orange-500 hover:text-white"
           >
             お問い合わせフォームへ
             <span>↗</span>
-          </Link>
+          </PlaceholderButton>
         </div>
       </section>
 
@@ -379,15 +389,15 @@ export default function KodomoShokudoPage() {
           子ども食堂プロジェクト ／ 〇〇大学 食のひろば
         </p>
         <div className="mb-4 flex justify-center gap-5">
-          <Link href="#" className="transition-colors hover:text-orange-400">
+          <PlaceholderButton className="transition-colors hover:text-orange-400">
             Instagram
-          </Link>
-          <Link href="#" className="transition-colors hover:text-orange-400">
+          </PlaceholderButton>
+          <PlaceholderButton className="transition-colors hover:text-orange-400">
             LINE
-          </Link>
-          <Link href="#" className="transition-colors hover:text-orange-400">
+          </PlaceholderButton>
+          <PlaceholderButton className="transition-colors hover:text-orange-400">
             お問い合わせ
-          </Link>
+          </PlaceholderButton>
         </div>
         <p>© {new Date().getFullYear()} 〇〇大学 食のひろば. All rights reserved.</p>
       </footer>
