@@ -218,7 +218,7 @@ export default function KodomoShokudoPage() {
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="#"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfIXJH1vRTMVPJCR3Uf8rTwVdlOKy67_svBWsG6KXMAryQfxg/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white px-8 py-4 text-base font-black text-orange-600 shadow-lg shadow-orange-700/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-50 active:translate-y-0 sm:text-lg"
